@@ -7,7 +7,8 @@
 
 </head>
 <body>
-<div style="background-image: url('pics/cover-pic.jpg');">
+<div>
+
 </div>
 
 <div>
@@ -31,6 +32,23 @@
         <option>dark</option>
     </select>
     <input id="submit" type="submit"/>
+    <form>
+        <label for="roast-selection"></label>
+<!--************************************************************************************************* DROPDOWN MENU  -->
+    <div class="btn-group" id="roast-selection">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Right-aligned menu
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+            <button class="dropdown-item" type="button">All</button>
+            <button class="dropdown-item" type="button">Light</button>
+            <button class="dropdown-item" type="button">Medium</button>
+            <button class="dropdown-item" type="button">Dark</button>
+        </div>
+    </div>
+
+<!--*****************************************************************************************************************-->
+<input id="submit" type="submit"/>
 </form>
     <div id="coffees"></div>
 
