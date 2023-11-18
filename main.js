@@ -1,11 +1,20 @@
 "use strict";
 
+/* when a click happens outside the 'Pick a Coffee!' input box this function will set user input to an empty string.*/
+document.addEventListener('click', function(event) {
+    const predictiveInput = document.getElementById('predictive');
+    if (event.target !== predictiveInput && !predictiveInput.contains(event.target)) {
+        predictiveInput.value = '';
+    }
+});
+
+
 // Function to render a single coffee as an HTML table row
 //REPLACING TABLE DATA WITH DIVS
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
-    html += `<div style="font-size: 20px">${coffee.name}</div>`;
-    html += `<div>${coffee.roast}</div>`;
+    html += `<span style="font-size: 20px">${coffee.name} </span>`;
+    html += `<span style="color: rgba(139,69,19,0.89)">${coffee.roast}</span>`;
     html += '</div>';
     return html;
 }
@@ -19,23 +28,6 @@ function renderCoffees(coffees) {
     return html;
 }
 
-// Function to update the displayed coffees based on the selected roast
-function updateCoffees(e) {
-    e.preventDefault();
-    const selectedRoast = roastSelection.value;
-    let filteredCoffees = [];
-
-    if (selectedRoast.toLowerCase() === 'all') {
-        // If 'All' is selected, include all coffees in the filtered list
-        filteredCoffees = coffees;
-    } else {
-        // Otherwise, filter coffees based on the selected roast
-        filteredCoffees = coffees.filter(coffee => coffee.roast === selectedRoast);
-    }
-
-    // Update the HTML content of tbody with the filtered coffees
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
 
 // Array of coffee objects
 const coffees = [
@@ -65,3 +57,98 @@ tbody.innerHTML = renderCoffees(coffees);
 
 // Add event listener to the submit button to update coffees on click
 submitButton.addEventListener('click', updateCoffees);
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------
+this code ensures that a new coffee entry is added to the list only if both the roast and name inputs are provided.
+If the inputs are valid, it updates the display with the new entry, and if not, it alerts the user to enter both values.
+----------------------------------------------------------------------------------------------------------------------*/
+// Function to handle form submission and append input as a new div
+function addCoffeeToList(e) {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // Get values from the form
+    const newRoast = document.getElementById('new-roast').value;
+    const newName = document.getElementById('to-do').value;
+
+    // Validate if the input is not empty
+    if (newRoast.trim() !== '' && newName.trim() !== '') {
+        // Create a new coffee object and add it to the coffees array
+        const newCoffee = {
+            name: newName, roast: newRoast.toLowerCase() };
+        coffees.push(newCoffee);
+
+        // Render the updated list of coffees
+        tbody.innerHTML = renderCoffees(coffees);
+
+        // Clear the form input
+        document.getElementById('new-roast').value = '';
+        document.getElementById('to-do').value = '';
+    } else {
+        // Show an alert if either input is empty
+        alert('Please enter both roast and name.');
+    }
+}
+
+// Get reference to the form with id 'new'
+const newCoffeeForm = document.getElementById('new');
+
+// Add event listener to the 'add-btn' button for form submission
+document.querySelector('.add-btn').addEventListener('click', addCoffeeToList);
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------
+this script  below allows users to dynamically filter and display a list of coffees based on both the selected roast and
+ the text entered in the predictive text input. The filtering occurs as the user types,
+ and the display is updated accordingly.
+----------------------------------------------------------------------------------------------------------------------*/
+// Initial value of the input field
+const initialValue = document.getElementById("predictive").value;
+
+// Call updateCoffees with the initial value
+updateCoffees(initialValue);
+
+// Add an event listener to the input field for changes
+document.getElementById("predictive").addEventListener("input", function () {
+    // Call updateCoffees with the updated value
+    updateCoffees(this.value);
+});
+
+// Add event listener to the submit button for form submission
+document.getElementById('submit').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Get the input value
+    const inputText = document.getElementById('predictive').value.trim().toLowerCase();
+
+    // Call updateCoffees with the input value
+    updateCoffees(inputText);
+});
+
+function updateCoffees(inputText) {
+    // Trim and convert to lowercase
+    const trimmedInput = inputText.trim().toLowerCase();
+    let filteredCoffees = [];
+
+    const selectedRoast = roastSelection.value;
+
+    if (trimmedInput === '') {
+        // If the input is empty, show all coffees based on the 'roast-selection' option
+        if (selectedRoast.toLowerCase() === 'all') {
+            // If 'All' is selected, include all coffees in the filtered list
+            filteredCoffees = coffees;
+        } else {
+            // Otherwise, filter coffees based on the selected roast
+            filteredCoffees = coffees.filter(coffee => coffee.roast === selectedRoast);
+        }
+    } else {
+        // If the input is not empty, filter coffees based on the input text
+        filteredCoffees = coffees.filter(coffee => coffee.name.toLowerCase().includes(trimmedInput));
+    }
+
+    // Update the HTML content of tbody with the filtered coffees
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}

@@ -18,29 +18,48 @@
 </div>
 
 <!--*****************************************************************************************************************-->
+<!---->
+<div style="display: flex; flex-direction: column; position: absolute; right: 20%; top: 30%;">
+    <h1>Pick a Coffee!</h1>
 
-<div style="display: flex; justify-content: center">
-    <h1>Coffee!</h1>
+    <label for="predictive"></label>
+    <input type="text" name="to-do" id="predictive" class="form-input" placeholder="Know what you want?">
 
     <form>
         <label for="roast-selection"></label>
-        <select id="roast-selection">
+        <select class="dropdown-button" id="roast-selection">
             <option>All</option>
             <option>light</option>
             <option>medium</option>
             <option>dark</option>
         </select>
-        <input id="submit" type="submit"/>
+        <input class="dropdown-button" id="submit" type="submit" value="Filter">
     </form>
     <div id="coffees"></div>
+    <hr>
 
+    <!--  *************************************************  -->
+    <h1>Add a Coffee</h1>
+    <section class="custom-section">
+        <form id="new">
+            <label for="new-roast"></label>
+            <select class="dropdown-button" id="new-roast">
+                <option value="" disabled selected>Select Roast</option>
+                <option>Light</option>
+                <option>Medium</option>
+                <option>Dark</option>
+            </select>
+            <h3><label for="to-do" class="new-name">What's it's name?</label></h3>
+            <input type="text" name="to-do" id="to-do" class="form-input">
+            <div>
+                <button class="add-btn">Add To List</button>
+            </div>
+        </form>
+    </section>
 </div>
 
+
 <!--*****************************************************************************************************************-->
-
-
-
-
 
 <script src="main.js"></script>
 
