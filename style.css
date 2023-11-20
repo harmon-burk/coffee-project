@@ -24,7 +24,9 @@ img {
     text-align: center;
     margin: 0 auto;
     max-width: 600px; /* Adjust the maximum width as needed */
+
 }
+
 
 #button-split{
     display: flex;
@@ -55,11 +57,22 @@ img {
 
 }
 
-/*#logo {
-    top: -8vw;
-    left: -7vw;
+body {
+    margin: 0; /* Remove default body margin */
+}
 
-}*/
+.navbar {
+    background-color: #793e0b; /* Adjust the background color */
+    padding: 10px; /* Adjust the padding */
+    text-align: center;
+}
+
+
+
+.block-space {
+    height: 75px; /* Adjust the height of the block space */
+}
+
 
 .split-beans {
     display: flex;
