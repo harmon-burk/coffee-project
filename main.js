@@ -127,7 +127,7 @@ document.getElementById('submit').addEventListener('click', function (e) {
     // Call updateCoffees with the input value
     updateCoffees(inputText);
 });
-
+/*-------------------------------------------------------------------*/
 function updateCoffees(inputText) {
     // Trim and convert to lowercase
     const trimmedInput = inputText.trim().toLowerCase();
