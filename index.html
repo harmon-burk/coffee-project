@@ -6,56 +6,63 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+<header>
+    <div class="split-beans">
+        <img src="pics/whole-beans.jpeg" class="whole" style="width: 50%">
+        <img src="pics/grinded-beans.jpeg" class="pre-grind" style="width: 50%">
+    </div>
+</header>
 <body>
-<div style="background-image: url('pics/cover-pic.jpg');">
-</div>
-
 <div>
-    <img id="logo" src="pics/grindz-logo.jpg" alt="top left corner" style="width: 50%">
-    <img id="stain-1" src="pics/stain-2.png" alt="bottom left corner" style="width: 50%">
-    <img id="stain-2" src="pics/stain-1.png" alt="top right corner" style="width: 50%">
+    <!-- <img id="logo" src="pics/grindz-logo.jpg" alt="top left corner" style="width: 30%">-->
+    <img id="stain-1" src="pics/stain-2.png" alt="bottom left corner" style="width: 40%">
+    <img id="stain-2" src="pics/stain-1.png" alt="top right corner" style="width: 40%">
 
 </div>
+
 
 <!--*****************************************************************************************************************-->
 <!---->
-<div style="display: flex; flex-direction: column; position: absolute; right: 20%; top: 30%;">
-    <h1>Pick a Coffee!</h1>
+<div class="center-content">
+    <div style="display: flex; flex-direction: column; justify-content: center; position: fixed; width: 20%">
+        <h1>Pick a Coffee!</h1>
 
-    <label for="predictive"></label>
-    <input type="text" name="to-do" id="predictive" class="form-input" placeholder="Know what you want?">
+        <label for="predictive"></label>
+        <input type="text" name="to-do" id="predictive" class="form-input" placeholder="Know what you want?">
 
-    <form>
-        <label for="roast-selection"></label>
-        <select class="dropdown-button" id="roast-selection">
-            <option>All</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input class="dropdown-button" id="submit" type="submit" value="Filter">
-    </form>
-    <div id="coffees"></div>
-    <hr>
-
-    <!--  *************************************************  -->
-    <h1>Add a Coffee</h1>
-    <section class="custom-section">
-        <form id="new">
-            <label for="new-roast"></label>
-            <select class="dropdown-button" id="new-roast">
-                <option value="" disabled selected>Select Roast</option>
-                <option>Light</option>
-                <option>Medium</option>
-                <option>Dark</option>
+        <form>
+            <label for="roast-selection"></label>
+            <select class="dropdown-button" id="roast-selection">
+                <option>All</option>
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
             </select>
-            <h3><label for="to-do" class="new-name">What's it's name?</label></h3>
-            <input type="text" name="to-do" id="to-do" class="form-input">
-            <div>
-                <button class="add-btn">Add To List</button>
-            </div>
+            <input class="dropdown-button" id="submit" type="submit"/>
         </form>
-    </section>
+
+        <div id="coffees"></div>
+        <hr>
+        <h1>Add a Coffee</h1>
+
+        <!--  *************************************************  -->
+        <section class="custom-section">
+            <form id="new">
+                <label for="new-roast"></label>
+                <select class="dropdown-button" id="new-roast">
+                    <option value="" disabled selected>Select Roast</option>
+                    <option>Light</option>
+                    <option>Medium</option>
+                    <option>Dark</option>
+                </select>
+                <h3><label for="to-do" class="new-name">Add to list above, and select whole bean or pre-grind</label></h3>
+                <input type="text" name="to-do" id="to-do" class="form-input">
+                <div>
+                    <button class="add-btn">Add To List</button>
+                </div>
+            </form>
+        </section>
+    </div>
 </div>
 
 

@@ -1,32 +1,80 @@
-
-
 form {
     display: block;
 }
+
+
 
 img {
     z-index: -1;
 }
 
+.cover-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: auto;
+
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px; /* Adjust the maximum width as needed */
+}
+
+
+#stain-1,
+#stain-2,
+#logo {
+    position: fixed;
+    background-attachment: fixed;
+    width: 100vw;
+    margin-top: 20%;
+}
+
 #stain-1 {
-    position: absolute;
-    top: -18em;
-    right: -5em;
+    top: -12vw;
+    right: -3vw;
+    z-index: -50;
 }
 
 #stain-2 {
-    position: absolute;
-    top: 18em;
-    left: -5em;
+    bottom: -12vw;
+    left: -5vw;
+    z-index: -50;
 
 }
 
-#logo {
-    position: absolute;
-    top: -16em;
-    left: -14em;
+/*#logo {
+    top: -8vw;
+    left: -7vw;
+
+}*/
+
+.split-beans {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 65%;
+    z-index: -10;
 }
 
+.split-beans img {
+    width: 30%;
+    height: auto;
+}
+
+/*  .whole{
+!* display: none;*!
+}*/
 
 
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -44,6 +92,9 @@ img {
 }
 
 
+
+
+
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -53,6 +104,7 @@ img {
     padding: 40px;
     margin-top: 1rem;
 }
+
 
 .new-name {
     font-size: 1.25rem;
@@ -66,7 +118,7 @@ img {
 }
 
 .add-btn {
-    width: 100%;
+    width: 150%;
     padding: 0.75rem;
     margin-top: 1rem;
     font-size: 1rem;
@@ -77,3 +129,114 @@ img {
     border-radius: 0.25rem;
 }
 
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+#result {
+    border: 1px dotted #ccc;
+    padding: 3px;
+}
+#result ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#result ul li {
+    padding: 5px 0;
+}
+#result ul li:hover {
+    background: #eee;
+}
+
+/* Styles for the Pick a Coffee! section */
+#coffees {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dac0ac;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+h1 {
+    background-color: rgba(234, 182, 125, 0.72);
+    border-radius: 5px;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+/* Styles for the dropdowns */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input,
+.dropdown-button {
+    margin-bottom: 10px;
+}
+
+/* Additional styling for the submit button */
+#submit {
+    background-color: #28a745;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #218838;
+}
+
+/* Styles for the HR */
+hr {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Styles for the Add a Coffee section */
+.custom-section {
+    background-color: #dac0ac;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the form within the custom section */
+#new {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles for the dropdown */
+#new-roast {
+    margin-bottom: 10px;
+}
+
+/* Styles for the coffee name input */
+.new-name input {
+    margin-bottom: 10px;
+}
+
+/* Styles for the Add To List button */
+.add-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
