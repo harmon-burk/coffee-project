@@ -152,3 +152,26 @@ function updateCoffees(inputText) {
     // Update the HTML content of tbody with the filtered coffees
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+// Creating function for whole and ground bean to images
+document.addEventListener('DOMContentLoaded', function () {
+    // Get references to the bean type dropdown and images
+    const beanTypeDropdown = document.getElementById('bean-type');
+    const wholeBeanImage = document.querySelector('.whole');
+    const preGrindImage = document.querySelector('.pre-grind');
+
+    // Add event listener to the bean type dropdown
+    beanTypeDropdown.addEventListener('change', function () {
+        // Check the selected value
+        const selectedBeanType = beanTypeDropdown.value;
+
+        // Set opacity based on the selected bean type
+        if (selectedBeanType === 'Whole') {
+            wholeBeanImage.style.opacity = 1; // Make whole bean image visible
+            preGrindImage.style.opacity = 0.5; // Adjust opacity for pre-grind image
+        } else if (selectedBeanType === 'Ground') {
+            preGrindImage.style.opacity = 1; // Make pre-grind image visible
+            wholeBeanImage.style.opacity = 0.5; // Adjust opacity for whole bean image
+        }
+    });
+});

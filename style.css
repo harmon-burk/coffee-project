@@ -26,24 +26,30 @@ img {
     max-width: 600px; /* Adjust the maximum width as needed */
 }
 
+#button-split{
+    display: flex;
+    justify-content: space-around;
+
+}
+
 
 #stain-1,
 #stain-2,
 #logo {
     position: fixed;
-    background-attachment: fixed;
+
     width: 100vw;
-    margin-top: 20%;
+
 }
 
 #stain-1 {
-    top: -12vw;
-    right: -3vw;
+    top: -10vw;
+    right: 0;
     z-index: -50;
 }
 
 #stain-2 {
-    bottom: -12vw;
+    top: -10vw;
     left: -5vw;
     z-index: -50;
 
@@ -60,21 +66,30 @@ img {
     flex-direction: row;
     justify-content: space-between;
     position: fixed;
-    top: 0;
+    top: 60%;
     left: 0;
     right: 0;
-    bottom: 65%;
+    bottom: 0;
     z-index: -10;
 }
 
 .split-beans img {
-    width: 30%;
+    width: 50%;
     height: auto;
+    position: absolute;
 }
 
-/*  .whole{
-!* display: none;*!
-}*/
+.whole {
+    top: 0;
+    left: 0;
+    opacity: 50%;
+}
+
+.pre-grind {
+    top: 0;
+    right: 0;
+    opacity: 50%;
+}
 
 
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -103,6 +118,7 @@ img {
     border-radius: 0.25rem;
     padding: 40px;
     margin-top: 1rem;
+
 }
 
 
@@ -181,13 +197,13 @@ h1 {
 
 /* Additional styling for the submit button */
 #submit {
-    background-color: #28a745;
+    background-color: #793e0b;
     color: #fff;
     transition: background-color 0.3s ease;
 }
 
 #submit:hover {
-    background-color: #218838;
+    background-color: #ab6630;
 }
 
 /* Styles for the HR */
@@ -229,7 +245,7 @@ hr {
     width: 100%;
     padding: 10px;
     font-size: 1.2em;
-    background-color: #007bff;
+    background-color: #793e0b;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -238,5 +254,5 @@ hr {
 }
 
 .add-btn:hover {
-    background-color: #0056b3;
+    background-color: #ab6630;
 }

@@ -7,24 +7,24 @@
 
 </head>
 <header>
-    <div class="split-beans">
-        <img src="pics/whole-beans.jpeg" class="whole" style="width: 50%">
-        <img src="pics/grinded-beans.jpeg" class="pre-grind" style="width: 50%">
-    </div>
 </header>
 <body>
 <div>
     <!-- <img id="logo" src="pics/grindz-logo.jpg" alt="top left corner" style="width: 30%">-->
-    <img id="stain-1" src="pics/stain-2.png" alt="bottom left corner" style="width: 40%">
-    <img id="stain-2" src="pics/stain-1.png" alt="top right corner" style="width: 40%">
+    <img id="stain-1" src="pics/stain-2.png" alt="bottom left corner" style="width: 750px">
+    <img id="stain-2" src="pics/stain-1.png" alt="top right corner" style="width: 750px">
 
+</div>
+<div class="split-beans">
+    <img src="pics/whole-beans.jpeg" class="whole">
+    <img src="pics/grinded-beans.jpeg" class="pre-grind">
 </div>
 
 
 <!--*****************************************************************************************************************-->
 <!---->
 <div class="center-content">
-    <div style="display: flex; flex-direction: column; justify-content: center; position: fixed; width: 20%">
+    <div style="display: flex; flex-direction: column; justify-content: center; width: 60%">
         <h1>Pick a Coffee!</h1>
 
         <label for="predictive"></label>
@@ -48,14 +48,23 @@
         <!--  *************************************************  -->
         <section class="custom-section">
             <form id="new">
-                <label for="new-roast"></label>
-                <select class="dropdown-button" id="new-roast">
-                    <option value="" disabled selected>Select Roast</option>
-                    <option>Light</option>
-                    <option>Medium</option>
-                    <option>Dark</option>
-                </select>
-                <h3><label for="to-do" class="new-name">Add to list above, and select whole bean or pre-grind</label></h3>
+                <div id="button-split">
+                    <label for="new-roast"></label>
+                    <select class="dropdown-button" id="new-roast" style="margin-right: 4px">
+                        <option value="" disabled selected>Select Roast</option>
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                    <label for="bean-type"></label>
+                    <select class="dropdown-button" id="bean-type">
+                        <option value="" disabled selected>Bean Type</option>
+                        <option id="whole">Whole</option>
+                        <option id="ground">Ground</option>
+                    </select>
+                </div>
+                <h3><label for="to-do" class="new-name">Forget something? Just add it below!</label>
+                </h3>
                 <input type="text" name="to-do" id="to-do" class="form-input">
                 <div>
                     <button class="add-btn">Add To List</button>
